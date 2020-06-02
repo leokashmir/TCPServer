@@ -34,7 +34,7 @@ public final class AppPrincipal {
 
             final ServerSocket socket = con.startServer(port);//NOPMD
 
-            if(LOG.isInfoEnabled()){ LOG.info("Servidor Iniciado na Porta "+ port); }
+            if(LOG.isInfoEnabled()){ LOG.info("Servidor Iniciado na Porta: "+ port); }
 
             final IMDBStartService start = new IMDBStartService();
             start.startListener(socket);
