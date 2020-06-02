@@ -68,7 +68,7 @@ Depois de baixar o arquivo JDK, basta executa-lo e seguir os passo da isntalaç�
  2. Navegue pelas pastas ate onde foi salvo o arquivo *TCPServer-1.0.jar*
  3. No prompt de comando digite o seguinte comando: <br>
  *java -jar TCPServer-1.0.jar [--port]*
- >Obs: O Paramentro port é opcional, caso não seja informado, o servidor iniciara na porta 5333 
+ >Obs: O Paramentro port é opcional, caso não seja informado, o servidor iniciara na porta 5551 
  
  ## Versão
   
