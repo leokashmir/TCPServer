@@ -23,15 +23,16 @@ public class PayLoadManeger {//NOPMD
      * @return true : false
      */
     public boolean checkPayLoad(final String requestPayLoad ){
+        retorno = false;
         try{
             if(checkValidPayLoad( requestPayLoad )){
                 final String[]payLoad = requestPayLoad.split(":", -1);
-                final String size = payLoad[0];
-                final int sizePayload = size.length();
+                final String queryLength = payLoad[0];
+                final int query =  payLoad[1].length();
 
-                final int payloadLength = Integer.parseInt(size);
+                final int payloadLength = Integer.parseInt(queryLength);
 
-                retorno = payloadLength ==  requestPayLoad.length() - sizePayload ;
+                retorno = payloadLength ==  query  ;
             }
         }catch( NumberFormatException ex){
             if(LOG.isErrorEnabled()){
@@ -52,11 +53,9 @@ public class PayLoadManeger {//NOPMD
      * @return String
      */
     public String payloadToSentece(final String requestPayLoad ){
-        final String[]payLoad = requestPayLoad.split(":", +1);
-        final String size = payLoad[0];
-        final int posStart = size.length();
-        final int posEnd =  requestPayLoad.length();
-        return  requestPayLoad.substring(posStart, posEnd );
+        final String[] payLoad = requestPayLoad.split(":");
+        return payLoad[1];
+
     }
 
     /**
@@ -70,7 +69,8 @@ public class PayLoadManeger {//NOPMD
         if(payload != null){
             payLoadFormatted.append(payload.length())
                     .append(':')
-                    .append(payload);
+                    .append(payload)
+                    .append('\n');
         }
         return payLoadFormatted.toString();
     }

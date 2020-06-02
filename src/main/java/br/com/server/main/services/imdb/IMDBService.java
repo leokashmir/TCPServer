@@ -50,7 +50,7 @@ public class IMDBService {//NOPMD
         final StringBuilder lsTitleFilms = new StringBuilder();
 
         element.forEach(e -> {
-            e.getElementsByTag("a").forEach( a -> lsTitleFilms.append(a.text()));
+            e.getElementsByTag("a").forEach( a -> lsTitleFilms.append(a.text()).append(" "));
         });
 
         return lsTitleFilms.toString();

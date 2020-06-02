@@ -64,17 +64,13 @@ public class IMDBListener implements Runnable {
             if(LOG.isInfoEnabled()) {
                 LOG.info("Conexao Estabelecida: " + connectionSocket.getLocalAddress());
             }
-
-             inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-             outToClient = new DataOutputStream(connectionSocket.getOutputStream());
-
+            inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 
             while (true) {
 
                 String sentece = inFromClient.readLine();
                 if (payLoadManeger.checkPayLoad(sentece)) {
-
-
                     sentece = payLoadManeger.payloadToSentece(sentece);
 
                     if(LOG.isInfoEnabled()) {
@@ -85,9 +81,11 @@ public class IMDBListener implements Runnable {
 
                     clientSentence = payLoadManeger.mountPayLoadOut(listTitlesFilms);
 
-                    outToClient.writeBytes(clientSentence + '\n');
+                    outToClient.writeBytes(clientSentence);
+
 
                 }else{
+                    outToClient.writeBytes("Payload incorreto, encerrando conexao.\n");
                     inFromClient.close();
                     outToClient.close();
                     connectionSocket.close();
