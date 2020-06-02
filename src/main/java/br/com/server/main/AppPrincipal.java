@@ -25,12 +25,13 @@ public final class AppPrincipal {
      */
     public static void main(final String arg[])   {
         try{
-            if(LOG.isInfoEnabled()){
-                LOG.info("Iniciando Servidor");
-            }
+
 
             final ServerConnect con = new ServerConnect();
             final ServerSocket socket = con.startServer(5551);//NOPMD
+
+            if(LOG.isInfoEnabled()){ LOG.info("Servidor Iniciado"); }
+
             final IMDBStartService start = new IMDBStartService();
             start.startListener(socket);
 

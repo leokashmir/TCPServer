@@ -62,7 +62,7 @@ public class IMDBListener implements Runnable {
 
 
             if(LOG.isInfoEnabled()) {
-                LOG.info("Conexao Estabelecida: " + connectionSocket.getLocalAddress());
+                LOG.info("Conexao Estabelecida: " + connectionSocket.getRemoteSocketAddress());
             }
             inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
             outToClient = new DataOutputStream(connectionSocket.getOutputStream());
@@ -89,6 +89,7 @@ public class IMDBListener implements Runnable {
                     inFromClient.close();
                     outToClient.close();
                     connectionSocket.close();
+                    break;
                 }
             }
 
