@@ -1,4 +1,4 @@
-# Servidor TCP
+# Servidor TCP - Multithread
 ###### Projeto Basico para um Servidor TCP 
 Este projeto tem como objetivo a criação de um Servidor TCP, onde ao inicia-lo é possivel definir a porta a ser utilizado.
 
@@ -29,10 +29,9 @@ Resposta: Star Trek O Filme <br>
 ## Tecnologias
 
 - Java JDK 8   -> https://www.oracle.com/java/technologies/javase-jdk8-downloads.html
-- JUnit        -> https://junit.org/junit5/
 - Gradle       -> https://docs.gradle.org
 - JSoup        -> https://jsoup.org
-- Google Guice -> https://github.com/google/guice/wiki/GettingStarted
+
  
 
  
