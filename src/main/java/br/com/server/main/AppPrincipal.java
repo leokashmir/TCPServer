@@ -29,17 +29,17 @@ public final class AppPrincipal {
 
             final ServerConnect con = new ServerConnect();
 
-            final String portParametro = arg[0];
-            final int port = (portParametro == null) ?  5551 :  Integer.parseInt(portParametro);
+            final int args = arg.length;
+            final int port = (args == 0) ?  5551 :  Integer.parseInt(arg[0]);
 
             final ServerSocket socket = con.startServer(port);//NOPMD
 
-            if(LOG.isInfoEnabled()){ LOG.info("Servidor Iniciado"); }
+            if(LOG.isInfoEnabled()){ LOG.info("Servidor Iniciado na Porta "+ port); }
 
             final IMDBStartService start = new IMDBStartService();
             start.startListener(socket);
 
-        }catch (IOException e){
+        }catch (IOException | NumberFormatException ex){
             LOG.error( "Erro ao inicar o Servidor ");
         }
 

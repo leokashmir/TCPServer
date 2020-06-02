@@ -4,6 +4,6 @@
 
 #files
 gradlew.bat
-build/
+build
 .gradle/
 
