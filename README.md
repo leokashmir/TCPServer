@@ -32,8 +32,43 @@ Resposta: Star Trek O Filme <br>
 - Gradle       -> https://docs.gradle.org
 - JSoup        -> https://jsoup.org
 
- 
+## Testando o Servidor e Serviços
 
+###### Java Instalado?
+
+
+- Verificando se o java esta instalado
+
+1. Em seu Windows 10, clique na Lupa e digite "cmd".
+2. Em seguida clique sobre a "Prompt de Comando"
+3. Digite *java -version* e aperte *"Enter"*
+ 
+Se o retorno for algo similar a isto:<br>
+java version "1.8.0_211"<br>
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)<br>
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)<br>
+
+O java esta instalado em seu PC.<br>
+ 
+Caso contrario, sera necessario instala-lo.</br> Link para fazer o donwload da instalação https://www.oracle.com/technetwork/java/javase/overview/index.html </br> Selecione o arquivo, conforme seu sistema operacional.
+Depois de baixar o arquivo JDK, basta executa-lo e seguir os passo da isntalação.
+
+###### Testando o Servidor
+
+**Passo 1 Baixando o arquvio  TCPServe-1.0.jar**
+ 
+ 1. Vá até o Projeto
+ 2. Na Raiz do Projeto existe a Pasta **app** Acesse ela.
+ 3. Clique sobre o arquivo **TCPServe-1.0.jar**
+ 4. Uma nova pagina sera aberta, clique no botão donwload
+ 5. Salve o arquivo em seu computador
+ 
+ **Passo 2 Executando o arquivo**
+ 1. Acesse o prompt de comando
+ 2. Navegue pelas pastas ate onde foi salvo o arquivo *TCPServer-1.0.jar*
+ No prompt de comando digite o seguinte comando: <br>
+ *java -jar TCPServer-1.0.jar [--port]*
+ >Obs: O Paramentro port é opcional, caso não seja informa, o servidor iniciara na porta 5333 
  
  ## Versão
   
