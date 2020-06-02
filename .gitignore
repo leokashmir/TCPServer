@@ -1,0 +1,8 @@
+# IDEs and editors
+.idea/
+
+
+#files
+gradlew.bat
+build/
+.gradle/
